@@ -29,7 +29,7 @@ export default function svelte ( options = {} ) {
 
 			const name = capitalize( sanitize( id ) );
 
-			return compile( code, {
+			return (options.svelte ? options.svelte.compile : compile)( code, {
 				name,
 				filename: id,
 				css: options.css,
